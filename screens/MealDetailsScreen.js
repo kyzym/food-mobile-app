@@ -1,13 +1,7 @@
 import { useLayoutEffect } from 'react';
-import {
-  Button,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { List, MealDetails, Subtitle } from '../components';
+import { IconButton } from '../components/IconButton';
 import { MEALS } from '../data/dummy-data';
 
 export const MealDetailScreen = ({ route, navigation }) => {
@@ -16,13 +10,19 @@ export const MealDetailScreen = ({ route, navigation }) => {
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
   const headerButtonPressHandler = () => {
-    console.log('Cat');
+    console.log('Shine!');
   };
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => {
-        return <Button title="Button!" onPress={headerButtonPressHandler} />;
+        return (
+          <IconButton
+            icon="star"
+            color="white"
+            onPress={headerButtonPressHandler}
+          />
+        );
       },
     });
   }, [navigation, headerButtonPressHandler]);

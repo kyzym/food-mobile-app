@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { CategoriesScreen } from './screens/CategoriesScreen';
 import { MealDetailScreen } from './screens/MealDetailsScreen';
 import { MealsOverviewScreen } from './screens/MealsOverviewScreen';
+import { Button, Text } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 

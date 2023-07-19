@@ -1,6 +1,6 @@
 import { FlatList } from 'react-native';
 import { CATEGORIES } from '../data/dummy-data';
-import { CategoryGridTitle } from '../components/CategoryGridTitle';
+import { CategoryGridTitle } from '../components';
 import { StyleSheet } from 'react-native';
 
 export const CategoriesScreen = ({ navigation }) => {

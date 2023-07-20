@@ -1,15 +1,16 @@
+import { Ionicons } from '@expo/vector-icons';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { loadAsync } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { Provider } from 'react-redux';
 import { CategoriesScreen, FavoritesScreen, MealDetailScreen } from './screens';
 import { MealsOverviewScreen } from './screens/MealsOverviewScreen';
-import { Ionicons } from '@expo/vector-icons';
+import { store } from './store/redux/store';
 import { colors } from './utils/constants';
-import { FavoritesContextProvider } from './store/context/favoriteContext';
+import { useCustomFonts } from './utils/useFonts';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -50,25 +51,7 @@ const DrawerNavigator = () => {
 };
 
 export default function App() {
-  const [fontIsLoaded, setFontIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const loadFonts = async () => {
-      try {
-        await loadAsync({
-          'roboto-regular': require('./assets/fonts/Roboto-Regular.ttf'),
-          'roboto-bold': require('./assets/fonts/Roboto-Bold.ttf'),
-          playfair: require('./assets/fonts/PlayfairDisplay-Regular.ttf'),
-          'playfair-bold': require('./assets/fonts/PlayfairDisplay-SemiBold.ttf'),
-        });
-        setFontIsLoaded(true);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    loadFonts();
-  }, []);
+  const fontIsLoaded = useCustomFonts();
 
   useEffect(() => {
     if (fontIsLoaded) {
@@ -83,7 +66,8 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <FavoritesContextProvider>
+      {/* <FavoritesContextProvider> */}
+      <Provider store={store}>
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={{
@@ -108,7 +92,8 @@ export default function App() {
             />
           </Stack.Navigator>
         </NavigationContainer>
-      </FavoritesContextProvider>
+      </Provider>
+      {/* </FavoritesContextProvider> */}
     </>
   );
 }

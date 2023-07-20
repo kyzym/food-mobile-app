@@ -1,10 +1,11 @@
 import { Pressable, StyleSheet, View } from 'react-native';
+import { colors } from '../utils/constants';
 
 export const ItemContainerPressed = ({ children, onPress }) => {
   return (
     <View style={styles.mealItem}>
       <Pressable
-        android_ripple={{ color: '#ccc' }}
+        android_ripple={{ color: colors.ripple }}
         style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
         onPress={onPress}>
         {children}

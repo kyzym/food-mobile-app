@@ -13,10 +13,10 @@ As of now, FoodApp is in its development phase and hasn't been deployed yet, but
 ## Screenshots 📸
 
 <p float="left">
-  <img src="./assets/screenshots/allCategories.jpg" width="200" height="500" />
-  <img src="./assets/screenshots/category.jpg" width="200" height="500" />
-  <img src="./assets/screenshots/about.jpg" width="200" height="500" />
-  <img src="./assets/screenshots/favorites.jpg" width="200" height="500" />
+  <img src="./assets/screenshots/allCategories.jpg" width="200" height="450" />
+  <img src="./assets/screenshots/category.jpg" width="200" height="450" />
+  <img src="./assets/screenshots/about.jpg" width="200" height="450" />
+  <img src="./assets/screenshots/favorites.jpg" width="200" height="450" />
 </p>
 
 ## Tech Stack and Libraries 💻

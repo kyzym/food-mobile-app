@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { ItemContainerPressed } from './ItemContainerPressed';
+import { ItemContainerPressed } from '../ItemContainerPressed';
 import { useNavigation } from '@react-navigation/native';
-import { MealDetails } from './MealDetails';
+import { MealDetails } from '../MealDetails';
 
 export const MealItem = ({
   id,

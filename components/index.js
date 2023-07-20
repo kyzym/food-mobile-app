@@ -2,4 +2,5 @@ export * from './MealDetail';
 export * from './CategoryGridTitle';
 export * from './ItemContainerPressed';
 export * from './MealDetails';
-export * from './MealItem';
+export * from './MealsList/MealItem';
+export * from './MealsList';
